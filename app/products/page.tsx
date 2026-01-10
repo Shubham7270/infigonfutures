@@ -1,3 +1,7 @@
+
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 import { fetchProducts } from "@/lib/api";
 import ProductsClient from "@/components/ProductsClient";
 import { notFound } from "next/navigation";
