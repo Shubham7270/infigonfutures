@@ -17,6 +17,9 @@ export default async function ProductDetailsPage({ params }: Props) {
     notFound();
   }
   const product = await fetchProductById(productId);
+  if(!product) notFound();
+
+  const p = product;
 
   return (
     <div className="mx-auto max-w-4xl space-y-8">
@@ -24,8 +27,8 @@ export default async function ProductDetailsPage({ params }: Props) {
         {/* Image */}
         <div className="relative aspect-square rounded-xl border bg-white p-6 dark:bg-black">
           <Image
-            src={product.image}
-            alt={product.title}
+            src={p.image}
+            alt={p.title}
             fill
             className="object-contain"
             priority
@@ -35,19 +38,19 @@ export default async function ProductDetailsPage({ params }: Props) {
         {/* Info */}
         <div className="space-y-4">
            <h1 className="text-2xl font-semibold">
-             {product.title}
+             {p.title}
             </h1>
 
          <p className="text-sm opacity-80">
-            Category: {product.category}
+            Category: {p.category}
          </p>
 
          <p className="text-xl font-bold">
-             ${product.price}
+             ${p.price}
               </p>
 
              <p className="leading-relaxed opacity-90">
-             {product.description}
+             {p.description}
              </p>
         </div>
       </div>
