@@ -1,7 +1,7 @@
 import { Product } from "../types/product";
 
-// const API_URL = "https://fakestoreapi.com/products";
-const API_URL = "/api/products";
+const API_URL = "https://fakestoreapi.com/products";
+// const API_URL = "/api/products";
 
 
 export async function fetchProducts(): Promise<Product[]> {

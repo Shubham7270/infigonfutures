@@ -8,9 +8,10 @@ import { notFound } from "next/navigation";
 
 export default async function ProductsPage() {
   const products = await fetchProducts();
-  if(!products){
-    notFound()
-  }
+  if (products.length === 0) {
+  notFound();
+}
+
 
   return (
     <>
